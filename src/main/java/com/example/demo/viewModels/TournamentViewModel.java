@@ -1,29 +1,14 @@
-package com.example.demo.models;
+package com.example.demo.viewModels;
 
-import javax.persistence.*;
+import com.example.demo.models.Participant;
+
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-public class Tournament {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private long id;
-
-    @Column
+public class TournamentViewModel {
     private String name;
 
-    @OneToMany
     private Set<Participant> participants = new HashSet<>();
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -40,4 +25,6 @@ public class Tournament {
     public void setParticipants(Set<Participant> participants) {
         this.participants = participants;
     }
+
+    public TournamentViewModel() {}
 }

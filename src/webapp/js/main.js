@@ -250,5 +250,5 @@ jQuery(document).ready(function ($) {
 
     };
     siteScroll();
-
+    $('#example').dataTable();
 });

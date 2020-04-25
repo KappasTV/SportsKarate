@@ -1,11 +1,10 @@
 package com.example.demo.models;
 
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-public class Tournament {
+public class Participant {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
@@ -14,8 +13,11 @@ public class Tournament {
     @Column
     private String name;
 
-    @OneToMany
-    private Set<Participant> participants = new HashSet<>();
+    @Column
+    private String surname;
+
+    @OneToOne
+    private Category category;
 
     public long getId() {
         return id;
@@ -33,11 +35,19 @@ public class Tournament {
         this.name = name;
     }
 
-    public Set<Participant> getParticipants() {
-        return participants;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setParticipants(Set<Participant> participants) {
-        this.participants = participants;
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
