@@ -28,14 +28,7 @@ public class ParticipantServiceImpl implements ParticipantService {
         Participant participant = new Participant();
         participant.setName(participantViewModel.getName());
         participant.setSurname(participantViewModel.getSurname());
-        AtomicReference<Category> neededCategory = new AtomicReference<Category>();
-        categoryRepository.findAll().forEach(category -> {
-            if (category.getName().equals(participantViewModel.getCategory().getName())) {
-                neededCategory.set(category);
-            }
-        });
-        System.out.println(neededCategory.get().getId());
-        participant.setCategory(neededCategory.get());
+        participant.setCategory(categoryRepository.findById(participantViewModel.getCategory().getId()).get());
         participantRepository.save(participant);
         return true;
     }

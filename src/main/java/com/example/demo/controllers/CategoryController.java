@@ -15,13 +15,13 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @PostMapping(value = "category/add")
+    @PostMapping(value = "categories/add")
     public Boolean addCategory(@RequestBody CategoryViewModel categoryViewModel) {
         return categoryService.addCategory(categoryViewModel);
     }
 
 
-    @GetMapping("category/getAll")
+    @GetMapping(value = "categories/getAll")
     public Set<CategoryViewModel> getAll() {
         return categoryService.getAll();
     }

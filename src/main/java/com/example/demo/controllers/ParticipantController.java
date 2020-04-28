@@ -15,13 +15,13 @@ public class ParticipantController {
     @Autowired
     private ParticipantService participantService;
 
-    @PostMapping(value = "/addParticipant")
+    @PostMapping(value = "participants/add")
     public Boolean addParticipant(@RequestBody ParticipantViewModel participantViewModel) {
         return participantService.addParticipant(participantViewModel);
     }
 
 
-    @GetMapping("/getAllParticipants")
+    @GetMapping(value = "participants/getAll")
     public Set<ParticipantViewModel> getAll() {
         return participantService.getAll();
     }

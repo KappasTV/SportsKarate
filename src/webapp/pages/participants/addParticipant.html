@@ -15,6 +15,7 @@
     <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -64,19 +65,19 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
+                <li>
                     <a href="../../index.html">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">person</i>
                         <span>Participants</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="active">
                             <a href="../participants/addParticipant.html">Add participant</a>
                         </li>
                         <li>
@@ -152,13 +153,13 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Add category
+                            Add participant
                         </h2>
                     </div>
                     <div class="body">
                         <form>
                             <div class="row clearfix">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <input id="name" type="text" class="form-control">
@@ -166,7 +167,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="surname" type="text" class="form-control">
+                                            <label class="form-label">Surname</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <select id="category" class="form-control show-tick" tabindex="-98">
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                                     <button id="add_button" type="button"
                                             class="btn btn-primary btn-lg m-l-15 waves-effect">Add
                                     </button>
@@ -180,26 +194,19 @@
     </div>
 </section>
 <script src="../../plugins/jquery/jquery.min.js"></script>
-<script>$.getScript("../../js/pages/categories/addCategory.js");</script>
-<script src="../../plugins/bootstrap/js/bootstrap.js"></script>
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script>$.getScript("../../js/pages/participants/addParticipant.js");</script>
 <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
 <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
 <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 <script src="../../plugins/node-waves/waves.js"></script>
-<script src="../../plugins/jquery-countto/jquery.countTo.js"></script>
-<script src="../../plugins/raphael/raphael.min.js"></script>
-<script src="../../plugins/morrisjs/morris.js"></script>
-<script src="../../plugins/chartjs/Chart.bundle.js"></script>
-<script src="../../plugins/flot-charts/jquery.flot.js"></script>
-<script src="../../plugins/flot-charts/jquery.flot.resize.js"></script>
-<script src="../../plugins/flot-charts/jquery.flot.pie.js"></script>
-<script src="../../plugins/flot-charts/jquery.flot.categories.js"></script>
-<script src="../../plugins/flot-charts/jquery.flot.time.js"></script>
-<script src="../../plugins/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="../../plugins/autosize/autosize.js"></script>
+<script src="../../plugins/momentjs/moment.js"></script>
+<script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<script src="../../plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="../../js/admin.js"></script>
-<script src="../../js/pages/index.js"></script>
 <script src="../../js/demo.js"></script>
+<script src="../../js/pages/index.js"></script>
+
 </body>
 
 </html>

@@ -31,8 +31,7 @@ public class CategoryServiceImpl implements CategoryService {
     public Set<CategoryViewModel> getAll() {
         Set<CategoryViewModel> categoryViewModels = new HashSet<>();
         categoryRepository.findAll().forEach(category -> {
-            CategoryViewModel categoryViewModel = new CategoryViewModel();
-            categoryViewModel.setName(category.getName());
+            CategoryViewModel categoryViewModel = new CategoryViewModel(category);
             categoryViewModels.add(categoryViewModel);
         });
         return categoryViewModels;

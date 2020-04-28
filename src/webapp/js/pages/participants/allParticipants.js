@@ -2,18 +2,18 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: 'application/json',
-    url: "http://www.localhost:8080/categories/getAll"
+    url: "http://www.localhost:8080/participants/getAll"
 }).done(function (msg) {
     fillTable(msg);
     $('.dataTable').DataTable({
         responsive: true,
         columns: [
-            {
-                data: msg
-            },
+            null,
+            null,
+            null,
             {
                 data: null,
-                defaultContent: "<button>Delete</button>"
+                defaultContent: "<button>Edit</button>"
             }
         ]
     });
@@ -23,6 +23,6 @@ $.ajax({
 function fillTable(rows) {
     rows.forEach(row => {
         console.log(row);
-        $('.dataTable > tbody').append(`<tr><td>${row.name}</td><td></td></tr>`);
+        $('.dataTable > tbody').append(`<tr><td>${row.name}</td><td>${row.surname}</td><td>${row.category.name}</td><td></td></tr>`);
     })
 }
