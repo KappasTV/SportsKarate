@@ -1,6 +1,8 @@
 package com.example.demo.models;
 
 
+import com.example.demo.viewModels.CategoryViewModel;
+
 import javax.persistence.*;
 
 @Entity
@@ -28,4 +30,10 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Category(CategoryViewModel categoryViewModel) {
+        this.setName(categoryViewModel.getName());
+    }
+
+    public Category(){};
 }
