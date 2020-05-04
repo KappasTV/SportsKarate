@@ -4,9 +4,10 @@ $('#add_button').click(function () {
         method: "POST",
         dataType: "json",
         contentType: 'application/json',
-        url: "http://www.localhost:8080/tournament/add",
+        url: "http://www.localhost:8080/tournaments/add",
         data: JSON.stringify({
-            name: name
+            name: name,
+            participants: null
         })
     }).done(function (msg) {
         console.log(msg);

@@ -1,12 +1,12 @@
 $('#add_button').click(function () {
-    let name = $('#name').val();
+    let frame = $('#name').val();
     $.ajax({
         method: "POST",
         dataType: "json",
         contentType: 'application/json',
-        url: "http://www.localhost:8080/category/add",
+        url: "http://www.localhost:8080/news/add",
         data: JSON.stringify({
-            name: name
+            frame: frame
         })
     }).done(function (msg) {
         console.log(msg);

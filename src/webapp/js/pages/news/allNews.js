@@ -2,27 +2,16 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: 'application/json',
-    url: "http://www.localhost:8080/category/getAll"
-}).done(function (msg) {
-    fillTable(msg);
-    $('.dataTable').DataTable({
-        responsive: true,
-        columns: [
-            {
-                data: msg
-            },
-            {
-                data: null,
-                defaultContent: "<button>Delete</button>"
-            }
-        ]
-    });
+    url: "http://www.localhost:8080/news/getAll"
+}).done(function (news) {
+    news.forEach(n => {
+        let g = $(n.frame).css("width", "-webkit-fill-available");
+        console.log(g);
+        $('#news-section').append(`
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                ${g[0].outerHTML}
+            </div>
+        `);
+    })
 });
 
-
-function fillTable(rows) {
-    rows.forEach(row => {
-        console.log(row);
-        $('.dataTable > tbody').append(`<tr><td>${row.name}</td><td></td></tr>`);
-    })
-}

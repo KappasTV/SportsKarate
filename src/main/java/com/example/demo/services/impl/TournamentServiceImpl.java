@@ -1,5 +1,6 @@
 package com.example.demo.services.impl;
 
+import com.example.demo.models.Tournament;
 import com.example.demo.repositories.TournamentRepository;
 import com.example.demo.services.TournamentService;
 import com.example.demo.viewModels.TournamentViewModel;
@@ -15,6 +16,15 @@ public class TournamentServiceImpl implements TournamentService {
 
     @Autowired
     TournamentRepository tournamentRepository;
+
+    @Override
+    public Boolean addTournament(TournamentViewModel tournamentViewModel) {
+        Tournament tournament = new Tournament();
+        tournament.setName(tournamentViewModel.getName());
+        tournament.setParticipants(new HashSet<>());
+        tournamentRepository.save(tournament);
+        return true;
+    }
 
     @Override
     public Set<TournamentViewModel> getAll() {

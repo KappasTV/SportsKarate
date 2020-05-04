@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <title>Admin panel</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
-          type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../../plugins/node-waves/waves.css" rel="stylesheet"/>
-    <link href="../../plugins/animate-css/animate.css" rel="stylesheet"/>
-    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet"/>
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
     <link href="../../css/style.css" rel="stylesheet">
-    <link href="../../css/themes/all-themes.css" rel="stylesheet"/>
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
     <link href="../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../../fonts/icomoon/style.css" rel="stylesheet" />
+
 </head>
 
 <body class="theme-red">
@@ -48,23 +49,16 @@
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
-               data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="../admin.html">Admin
-                <panel></panel>
-            </a>
+            <a class="navbar-brand" href="../admin.html">Admin <panel></panel></a>
         </div>
     </div>
 </nav>
-<!-- #Top Bar -->
 <section>
-    <!-- Left Sidebar -->
     <aside id="leftsidebar" class="sidebar">
-        <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="../../images/user.png" width="48" height="48" alt="User"/>
+                <img src="../../images/user.png" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</div>
@@ -74,7 +68,7 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                    <a href="../../index.html">
+                    <a href="../admin.html">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
@@ -86,10 +80,10 @@
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="../user/addUser.html">Add person</a>
+                            <a href="../participants/addParticipant.html">Add participant</a>
                         </li>
                         <li>
-                            <a href="forms/advanced-form-elements.html">List all users</a>
+                            <a href="../participants/allParticipants.html">List all participants</a>
                         </li>
                     </ul>
                 </li>
@@ -100,24 +94,24 @@
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="user/addUser.html">Add tournament</a>
+                            <a href="../tournaments/addTournament.html">Add tournament</a>
                         </li>
                         <li>
-                            <a href="forms/advanced-form-elements.html">List all tournaments</a>
+                            <a href="../tournaments/allTournaments.html">List all tournaments</a>
                         </li>
                     </ul>
                 </li>
-                <li class="active">
+                <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">poll</i>
                         <span>Categories</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="addCategory.html">Add category</a>
+                            <a href="../categories/addCategory.html">Add category</a>
                         </li>
-                        <li class="active">
-                            <a href="#">List all categories</a>
+                        <li>
+                            <a href="../categories/allCategories.html">List all categories</a>
                         </li>
                     </ul>
                 </li>
@@ -128,24 +122,24 @@
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="user/addUser.html">Add news</a>
+                            <a href="../news/addNews.html">Add news</a>
                         </li>
                         <li>
-                            <a href="forms/advanced-form-elements.html">List all news</a>
+                            <a href="../news/allNews.html">List all news</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="active">
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">where_to_vote</i>
                         <span>Gyms</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="user/addUser.html">Add gym</a>
+                            <a href="../gyms/addGym.html">Add gym</a>
                         </li>
-                        <li>
-                            <a href="forms/advanced-form-elements.html">List all gyms</a>
+                        <li class="active">
+                            <a href="../gyms/allGyms.html">List all gyms</a>
                         </li>
                     </ul>
                 </li>
@@ -161,21 +155,12 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            List all categories
+                            List all gyms
                         </h2>
                     </div>
                     <div class="body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                <thead>
-                                    <tr>
-                                        <th>Category</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                        <div id="gyms-section" class="row">
 
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
@@ -183,26 +168,9 @@
         </div>
     </div>
 </section>
-
-<!-- Jquery Core Js -->
-
-<!-- Bootstrap Core Js -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
-<script>$.getScript("../../js/pages/categories/allCategories.js");</script>
+<script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
 <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
-
-<!-- Slimscroll Plugin Js -->
-<script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-<!-- Waves Effect Plugin Js -->
-<script src="../../plugins/node-waves/waves.js"></script>
-
-<!-- Jquery CountTo Plugin Js -->
-<script src="../../plugins/jquery-countto/jquery.countTo.js"></script>
-
-<script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
-
-<script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
 <script src="../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
 <script src="../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
 <script src="../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
@@ -211,12 +179,25 @@
 <script src="../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
 <script src="../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
 <script src="../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-<!-- Custom Js -->
+<script>$.getScript("../../js/pages/gyms/allGyms.js");</script>
+<script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="../../plugins/node-waves/waves.js"></script>
+<script src="../../plugins/jquery-countto/jquery.countTo.js"></script>
+<script src="../../plugins/raphael/raphael.min.js"></script>
+<script src="../../plugins/morrisjs/morris.js"></script>
+<script src="../../plugins/chartjs/Chart.bundle.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.resize.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.pie.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.categories.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.time.js"></script>
+<script src="../../plugins/jquery-sparkline/jquery.sparkline.js"></script>
 <script src="../../js/admin.js"></script>
 <script src="../../js/pages/index.js"></script>
-
-<!-- Demo Js -->
 <script src="../../js/demo.js"></script>
 </body>
 
 </html>
+
+

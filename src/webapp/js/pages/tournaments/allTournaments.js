@@ -2,7 +2,7 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: 'application/json',
-    url: "http://www.localhost:8080/category/getAll"
+    url: "http://www.localhost:8080/tournaments/getAll"
 }).done(function (msg) {
     fillTable(msg);
     $('.dataTable').DataTable({
