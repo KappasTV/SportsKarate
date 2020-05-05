@@ -4,6 +4,8 @@ import com.example.demo.models.Category;
 
 public class ParticipantViewModel {
 
+    private Long id;
+
     private String name;
 
     private String surname;
@@ -32,5 +34,13 @@ public class ParticipantViewModel {
 
     public void setCategory(CategoryViewModel category) {
         this.category = category;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

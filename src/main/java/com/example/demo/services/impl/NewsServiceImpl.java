@@ -30,8 +30,16 @@ public class NewsServiceImpl implements NewsService {
         newsRepository.findAll().forEach(news -> {
             NewsViewModel newsViewModel = new NewsViewModel();
             newsViewModel.setFrame(news.getFrame());
+            newsViewModel.setId(news.getId());
             newsViewModels.add(newsViewModel);
         });
         return newsViewModels;
+    }
+
+
+    @Override
+    public Boolean deleteNews(NewsViewModel newsViewModel) {
+        newsRepository.deleteById(newsViewModel.getId());
+        return true;
     }
 }

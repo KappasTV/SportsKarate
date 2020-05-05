@@ -7,6 +7,7 @@ import java.util.Set;
 
 public interface TournamentService {
     Boolean addTournament(TournamentViewModel tournamentViewModel);
+    Boolean deleteTournament(TournamentViewModel tournamentViewModel);
     Set<TournamentViewModel> getAll();
-
+    Boolean addParticipantToTournament(TournamentViewModel tournamentViewModel, Long participantId);
 }

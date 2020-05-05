@@ -3,6 +3,9 @@ package com.example.demo.viewModels;
 import com.example.demo.models.Gym;
 
 public class GymViewModel {
+
+    private Long id;
+
     private String frame;
 
     private String address;
@@ -43,6 +46,14 @@ public class GymViewModel {
         this.phone2 = phone2;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public GymViewModel(){};
 
     public GymViewModel(Gym gym) {
@@ -50,5 +61,6 @@ public class GymViewModel {
         this.setAddress(gym.getAdress());
         this.setPhone1(gym.getPhone1());
         this.setPhone2(gym.getPhone2());
+        this.setId(gym.getId());
     }
 }

@@ -16,13 +16,23 @@ public class TournamentController {
 
     @PostMapping(value = "tournaments/add")
     public Boolean addTournament(@RequestBody TournamentViewModel tournamentViewModel) {
-        tournamentService.addTournament(tournamentViewModel);
-        return true;
+        return tournamentService.addTournament(tournamentViewModel);
     }
 
     @GetMapping("tournaments/getAll")
     public Set<TournamentViewModel> getAll() {
         return tournamentService.getAll();
     }
+
+    @DeleteMapping("tournaments/delete")
+    public Boolean deleteTournament(@RequestBody TournamentViewModel tournamentViewModel) {
+        return tournamentService.deleteTournament(tournamentViewModel);
+    }
+
+    @PutMapping("tournaments/addParticipantToTournament")
+    public Boolean addParticipantToTournament(@RequestBody TournamentViewModel tournamentViewModel, @RequestParam Long participantId) {
+        return tournamentService.addParticipantToTournament(tournamentViewModel, participantId);
+    }
+
 
 }

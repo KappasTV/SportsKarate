@@ -26,4 +26,8 @@ public class ParticipantController {
         return participantService.getAll();
     }
 
+    @DeleteMapping("participants/delete")
+    public Boolean deleteTournament(@RequestBody ParticipantViewModel participantViewModel) {
+        return participantService.deleteParticipant(participantViewModel);
+    }
 }

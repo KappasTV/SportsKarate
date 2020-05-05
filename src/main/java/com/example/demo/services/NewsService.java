@@ -6,5 +6,6 @@ import java.util.Set;
 
 public interface NewsService {
     Boolean addNews(NewsViewModel newsViewModel);
+    Boolean deleteNews(NewsViewModel newsViewModel);
     Set<NewsViewModel> getAll();
 }

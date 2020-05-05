@@ -8,5 +8,6 @@ import java.util.Set;
 
 public interface ParticipantService {
     Boolean addParticipant(ParticipantViewModel participantViewModel);
+    Boolean deleteParticipant(ParticipantViewModel participantViewModel);
     Set<ParticipantViewModel> getAll();
 }

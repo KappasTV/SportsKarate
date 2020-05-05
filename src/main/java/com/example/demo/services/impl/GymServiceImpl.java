@@ -30,4 +30,10 @@ public class GymServiceImpl implements GymService {
         });
         return gymViewModels;
     }
+
+    @Override
+    public Boolean deleteGym(GymViewModel gymViewModel) {
+        gymRepository.deleteById(gymViewModel.getId());
+        return true;
+    }
 }

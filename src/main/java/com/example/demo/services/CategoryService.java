@@ -6,5 +6,6 @@ import java.util.Set;
 
 public interface CategoryService {
     Boolean addCategory(CategoryViewModel categoryViewModel);
+    Boolean deleteCategory(CategoryViewModel categoryViewModel);
     Set<CategoryViewModel> getAll();
 }

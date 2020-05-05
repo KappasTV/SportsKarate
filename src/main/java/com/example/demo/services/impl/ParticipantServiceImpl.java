@@ -34,11 +34,18 @@ public class ParticipantServiceImpl implements ParticipantService {
     }
 
     @Override
+    public Boolean deleteParticipant(ParticipantViewModel participantViewModel) {
+        participantRepository.deleteById(participantViewModel.getId());
+        return true;
+    }
+
+    @Override
     public Set<ParticipantViewModel> getAll() {
         Set<ParticipantViewModel> participantViewModels = new HashSet<>();
         participantRepository.findAll().forEach(participant -> {
             ParticipantViewModel participantViewModel = new ParticipantViewModel();
             participantViewModel.setName(participant.getName());
+            participantViewModel.setId(participant.getId());
             participantViewModel.setSurname(participant.getSurname());
             participantViewModel.setCategory(new CategoryViewModel(participant.getCategory()));
             participantViewModels.add(participantViewModel);

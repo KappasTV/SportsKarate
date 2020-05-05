@@ -23,4 +23,9 @@ public class NewsController {
     public Set<NewsViewModel> getAll() {
         return newsService.getAll();
     }
+
+    @DeleteMapping("news/delete")
+    public Boolean deleteTournament(@RequestBody NewsViewModel  newsViewModel) {
+        return newsService.deleteNews(newsViewModel);
+    }
 }

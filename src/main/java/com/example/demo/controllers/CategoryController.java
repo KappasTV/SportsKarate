@@ -20,6 +20,11 @@ public class CategoryController {
         return categoryService.addCategory(categoryViewModel);
     }
 
+    @DeleteMapping("categories/delete")
+    public Boolean deleteCategory(@RequestBody CategoryViewModel  categoryViewModel) {
+        return categoryService.deleteCategory(categoryViewModel);
+    }
+
 
     @GetMapping(value = "categories/getAll")
     public Set<CategoryViewModel> getAll() {

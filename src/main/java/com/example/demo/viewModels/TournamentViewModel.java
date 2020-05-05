@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TournamentViewModel {
+    private Long id;
+
     private String name;
 
     private Set<Participant> participants = new HashSet<>();
@@ -20,6 +22,14 @@ public class TournamentViewModel {
 
     public Set<Participant> getParticipants() {
         return participants;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setParticipants(Set<Participant> participants) {

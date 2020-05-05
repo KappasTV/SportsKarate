@@ -23,4 +23,9 @@ public class GymController {
     public Set<GymViewModel> getAll() {
         return gymService.getAll();
     }
+
+    @DeleteMapping("gyms/delete")
+    public Boolean deleteGym(@RequestBody GymViewModel  gymViewModel) {
+        return gymService.deleteGym(gymViewModel);
+    }
 }

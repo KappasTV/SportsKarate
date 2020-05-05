@@ -6,23 +6,32 @@ $.ajax({
 }).done(function (msg) {
     fillTable(msg);
     $('.dataTable').DataTable({
-        responsive: true,
-        columns: [
-            {
-                data: msg
-            },
-            {
-                data: null,
-                defaultContent: "<button>Delete</button>"
-            }
-        ]
+        responsive: true
+    });
+    $('.dataTable span').click(event => {
+        let id = $(event.currentTarget).data('id');
+
+        $.ajax({
+            method: "DELETE",
+            dataType: "json",
+            contentType: 'application/json',
+            url: "http://www.localhost:8080/categories/delete",
+            data: JSON.stringify({
+                id: id,
+                participants: null,
+                name: null,
+                surname: null
+            })
+        }).done(function (msg) {
+            window.location.reload();
+        });
     });
 });
 
 
 function fillTable(rows) {
     rows.forEach(row => {
-        console.log(row);
-        $('.dataTable > tbody').append(`<tr><td>${row.name}</td><td></td></tr>`);
+        let button = $(`<span class="material-icons" style="cursor: pointer" data-id="${row.id}">delete</span>`);
+        $('.dataTable > tbody').append(`<tr><td>${row.name}</td><td>${button[0].outerHTML}</td></tr>`);
     })
 }
