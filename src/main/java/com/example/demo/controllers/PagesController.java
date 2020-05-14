@@ -17,6 +17,7 @@ public class PagesController {
 
     @PostMapping("/login")
     public boolean login(@RequestBody LoginViewModel loginViewModel) {
+        System.out.println(loginViewModel.getUsername());
         return loginViewModel.getUsername().equals("admin") && loginViewModel.getPassword().equals("1234");
     }
 
