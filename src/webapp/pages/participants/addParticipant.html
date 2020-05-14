@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Admin panel</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Please wait...</p>
+    </div>
+</div>
+<div class="overlay"></div>
+<div class="search-bar">
+    <div class="search-icon">
+        <i class="material-icons">search</i>
+    </div>
+    <input type="text" placeholder="START TYPING...">
+    <div class="close-search">
+        <i class="material-icons">close</i>
+    </div>
+</div>
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="javascript:void(0);" class="bars"></a>
+            <a class="navbar-brand" href="../admin.html">Admin <panel></panel></a>
+        </div>
+    </div>
+</nav>
+<section>
+    <aside id="leftsidebar" class="sidebar">
+        <div class="user-info">
+            <div class="image">
+                <img src="../../images/user.png" width="48" height="48" alt="User" />
+            </div>
+            <div class="info-container">
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul class="list">
+                <li class="header">MAIN NAVIGATION</li>
+                <li>
+                    <a href="../admin.html">
+                        <i class="material-icons">home</i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">person</i>
+                        <span>Participants</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li class="active">
+                            <a href="../participants/addParticipant.html">Add participant</a>
+                        </li>
+                        <li>
+                            <a href="../participants/allParticipants.html">List all participants</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">emoji_events</i>
+                        <span>Tournaments</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="../tournaments/addTournament.html">Add tournament</a>
+                        </li>
+                        <li>
+                            <a href="../tournaments/addParticipantToTournament.html">Add participant to tournament</a>
+                        </li>
+                        <li>
+                            <a href="../tournaments/allTournaments.html">List all tournaments</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">poll</i>
+                        <span>Categories</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="../categories/addCategory.html">Add category</a>
+                        </li>
+                        <li>
+                            <a href="../categories/allCategories.html">List all categories</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">description</i>
+                        <span>News</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="../news/addNews.html">Add news</a>
+                        </li>
+                        <li>
+                            <a href="../news/allNews.html">List all news</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">where_to_vote</i>
+                        <span>Gyms</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="../gyms/addGym.html">Add gym</a>
+                        </li>
+                        <li>
+                            <a href="../gyms/allGyms.html">List all gyms</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Add participant
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <form>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="name" type="text" class="form-control">
+                                            <label class="form-label">Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="surname" type="text" class="form-control">
+                                            <label class="form-label">Surname</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <select id="category" class="form-control show-tick" tabindex="-98">
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <button id="add_button" type="button"
+                                            class="btn btn-primary btn-lg m-l-15 waves-effect">Add
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<script>$.getScript("../js/auth.js");</script>
+<script>$.getScript("../../js/pages/participants/addParticipant.js");</script>
+<script src="../../plugins/bootstrap/js/bootstrap.js"></script>
+<script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="../../plugins/node-waves/waves.js"></script>
+<script src="../../plugins/autosize/autosize.js"></script>
+<script src="../../plugins/momentjs/moment.js"></script>
+<script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<script src="../../plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="../../js/admin.js"></script>
+<script src="../../js/demo.js"></script>
+<script src="../../js/pages/index.js"></script>
+
+</body>
+
+</html>
