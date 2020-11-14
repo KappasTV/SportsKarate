@@ -6,7 +6,7 @@ $('#add_button').click(function () {
         method: "POST",
         dataType: "json",
         contentType: 'application/json',
-        url: "http://www.localhost:8080/addParticipant",
+        url: "http://sportskarate-union.com:8080/server/addParticipant",
         data: JSON.stringify({
             name: name,
             surname: surname,

@@ -5,7 +5,7 @@ $('#login').click(e => {
         method: "POST",
         dataType: "json",
         contentType: 'application/json',
-        url: "http://www.localhost:8080/login",
+        url: "http://sportskarate-union.com:8080/server/login",
         data: JSON.stringify({
             username: username,
             password: password
@@ -13,7 +13,7 @@ $('#login').click(e => {
     }).done(function (msg) {
         if (msg) {
             window.localStorage.setItem('loggedIn', true);
-            window.location.href = "http://localhost:63342/SportsKarate/src/webapp/pages/admin.html"
+            window.location.href = "http://sportskarate-union.com/pages/admin.html"
         }
     });
 });

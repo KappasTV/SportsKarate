@@ -14,9 +14,6 @@ public class Tournament {
     @Column
     private String name;
 
-    @OneToMany
-    private Set<Participant> participants = new HashSet<>();
-
     public long getId() {
         return id;
     }
@@ -31,13 +28,5 @@ public class Tournament {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Set<Participant> getParticipants() {
-        return participants;
-    }
-
-    public void setParticipants(Set<Participant> participants) {
-        this.participants = participants;
     }
 }

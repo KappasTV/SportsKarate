@@ -26,7 +26,6 @@ public class TournamentServiceImpl implements TournamentService {
     public Boolean addTournament(TournamentViewModel tournamentViewModel) {
         Tournament tournament = new Tournament();
         tournament.setName(tournamentViewModel.getName());
-        tournament.setParticipants(new HashSet<>());
         tournamentRepository.save(tournament);
         return true;
     }
@@ -45,21 +44,9 @@ public class TournamentServiceImpl implements TournamentService {
             TournamentViewModel tournamentViewModel = new TournamentViewModel();
             tournamentViewModel.setId(tournament.getId());
             tournamentViewModel.setName(tournament.getName());
-            tournamentViewModel.setParticipants(tournament.getParticipants());
             tournamentViewModels.add(tournamentViewModel);
         });
         return tournamentViewModels;
-    }
-
-    @Override
-    public Boolean addParticipantToTournament(TournamentViewModel tournamentViewModel, Long participantId) {
-        Tournament tournament = tournamentRepository.findById(tournamentViewModel.getId()).get();
-        Participant participant = participantRepository.findById(participantId).get();
-        if (!tournament.getParticipants().contains(participant)) {
-            tournament.getParticipants().add(participant);
-            tournamentRepository.save(tournament);
-        }
-        return true;
     }
 
 }

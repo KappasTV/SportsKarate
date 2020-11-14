@@ -2,7 +2,7 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: 'application/json',
-    url: "http://www.localhost:8080/tournaments/getAll"
+    url: "http://sportskarate-union.com:8080/server/tournaments/getAll"
 }).done(function (msg) {
     fillTable(msg);
     $('.dataTable').DataTable({
@@ -16,7 +16,7 @@ $.ajax({
             method: "DELETE",
             dataType: "json",
             contentType: 'application/json',
-            url: "http://www.localhost:8080/tournaments/delete",
+            url: "http://sportskarate-union.com:8080/server/tournaments/delete",
             data: JSON.stringify({
                 id: id,
                 participants: null,

@@ -2,7 +2,7 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: 'application/json',
-    url: "http://localhost:8080/participants/getAll"
+    url: "http://sportskarate-union.com:8080/server/participants/getAll"
 }).done(function (data) {
     data.forEach(participant => {
         $('#participants').append(`<option value="${participant.id}">${participant.name + ' ' + participant.surname + ' (' + participant.category.name +')' }</option>`);
@@ -14,7 +14,7 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: 'application/json',
-    url: "http://localhost:8080/tournaments/getAll"
+    url: "http://sportskarate-union.com:8080/server/tournaments/getAll"
 }).done(function (data) {
     data.forEach(tournament => {
         $('#tournament').append(`<option value="${tournament.id}">${tournament.name}</option>`);
@@ -30,7 +30,7 @@ $('#add_button').click(function () {
     //     method: "POST",
     //     dataType: "json",
     //     contentType: 'application/json',
-    //     url: "http://www.localhost:8080/participants/add",
+    //     url: "http://sportskarate-union.com:8080/server/participants/add",
     //     data: JSON.stringify({
     //         name: name,
     //         surname: surname,

@@ -4,7 +4,7 @@ public class NewsViewModel {
 
     private Long id;
 
-    private String frame;
+        private String frame;
 
     public String getFrame() {
         return frame;

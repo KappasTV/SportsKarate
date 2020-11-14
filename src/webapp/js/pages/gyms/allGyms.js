@@ -2,7 +2,7 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: 'application/json',
-    url: "http://www.localhost:8080/gyms/getAll"
+    url: "http://sportskarate-union.com:8080/server/gyms/getAll"
 }).done(function (gyms) {
     gyms.forEach(gym => {
         let frame = $(gym.frame).css('width', '-webkit-fill-available');

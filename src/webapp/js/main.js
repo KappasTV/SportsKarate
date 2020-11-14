@@ -8,6 +8,46 @@ jQuery(document).ready(function ($) {
 
     "use strict";
 
+    $.ajax({
+        method: "GET",
+        dataType: "json",
+        contentType: 'application/json',
+        url: "http://sportskarate-union.com:8080/server/news/getAll"
+    }).done(function (msg) {
+        let arr = [];
+        msg.forEach((news) => {
+            if (news.frame.indexOf('<') > -1)
+                arr.push(news);
+            if (arr.length === 3) {
+                let item = $(`<div class="carousel-item">
+                                <div class="row"></div></div>`);
+                $('#carouselExampleControls .carousel-inner').append(item);
+
+                arr.forEach(n => {
+                    item.find('.row').append(`<div class="col-md-6 col-lg-4 mb-4 mb-lg-4">${n.frame}</div>`);
+                })
+
+                arr = []
+            }
+        });
+        if (arr.length !== 0) {
+            $('#carouselExampleControls .carousel-inner').append(`                            
+                            <div class="carousel-item">
+                                <div class="row">
+                                ${arr.map(n => {
+                return `<div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                                        ${n.frame}
+                                    </div>`
+            })}
+                                    
+                                </div>
+                        </div>`);
+        }
+        $('body').prepend(`<script async defer crossorigin="anonymous" src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v8.0" nonce="IDvKIyjr"></script>
+`)
+        $('#carouselExampleControls .carousel-inner .carousel-item').first().addClass('active');
+    });
+
 
     $(".loader").delay(1000).fadeOut("slow");
     $("#overlayer").delay(1000).fadeOut("slow");
@@ -175,40 +215,6 @@ jQuery(document).ready(function ($) {
     };
     siteCarousel();
 
-    var siteStellar = function () {
-        $(window).stellar({
-            responsive: false,
-            parallaxBackgrounds: true,
-            parallaxElements: true,
-            horizontalScrolling: false,
-            hideDistantElements: false,
-            scrollProperty: 'scroll'
-        });
-    };
-    // siteStellar();
-
-    var siteCountDown = function () {
-
-        $('#date-countdown').countdown('2020/10/10', function (event) {
-            var $this = $(this).html(event.strftime(''
-                + '<span class="countdown-block"><span class="label">%w</span> weeks </span>'
-                + '<span class="countdown-block"><span class="label">%d</span> days </span>'
-                + '<span class="countdown-block"><span class="label">%H</span> hr </span>'
-                + '<span class="countdown-block"><span class="label">%M</span> min </span>'
-                + '<span class="countdown-block"><span class="label">%S</span> sec</span>'));
-        });
-
-    };
-    siteCountDown();
-
-    var siteDatePicker = function () {
-
-        if ($('.datepicker').length > 0) {
-            $('.datepicker').datepicker();
-        }
-
-    };
-    siteDatePicker();
 
     var siteSticky = function () {
         $(".js-sticky-header").sticky({topSpacing: 0});
@@ -251,4 +257,31 @@ jQuery(document).ready(function ($) {
     };
     siteScroll();
     $('#example').dataTable();
+    $.ajax({
+        method: "GET",
+        dataType: "json",
+        contentType: 'application/json',
+        url: "http://sportskarate-union.com:8080/server/gyms/getAll"
+    }).done(function (msg) {
+        msg.forEach((gym) => {
+            $('#gyms-list').append(`
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <iframe style="width: inherit"
+                            src="${gym.frame}"
+                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    <div class="unit-4 d-block">
+                        <div class="unit-4-icon m b-3">
+                            <span class="icon-wrap"><span class="text-primary  icon-map-marker"></span></span>
+                        </div>
+                        <div>
+                            <h3>${gym.address}</h3>
+                            <p>${gym.phone1} <br> ${gym.phone2 || ''}</p>
+                        </div>
+                    </div>
+                </div>
+            `);
+        });
+    });
+
 });
